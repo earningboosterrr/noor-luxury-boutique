@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'lato': ['Lato', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +57,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Luxury jewellery brand colors
+				'jet-black': '#000000',
+				'luxury-gold': {
+					'base': '#D4AF37',
+					'bright': '#FFD700',
+					'dark': '#B8860B'
+				},
+				'muted-grey': '#CCCCCC',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +75,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'luxury-gradient': 'linear-gradient(135deg, #D4AF37 0%, #FFD700 100%)',
+				'hero-overlay': 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +101,34 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'golden-glow': {
+					'0%': {
+						boxShadow: '0 0 5px #D4AF37'
+					},
+					'50%': {
+						boxShadow: '0 0 20px #FFD700, 0 0 30px #D4AF37'
+					},
+					'100%': {
+						boxShadow: '0 0 5px #D4AF37'
+					}
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'golden-glow': 'golden-glow 2s ease-in-out infinite',
+				'fade-in-up': 'fade-in-up 0.6s ease-out'
 			}
 		}
 	},
